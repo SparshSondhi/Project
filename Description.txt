@@ -1,0 +1,14 @@
+This project is called Profile-Comparer. As the name suggests, the scripts involved compare multiple user’s 
+Instagram profiles i.e. the number of Posts they have, the number of followers they have and the number of people 
+they’re following. It uses NodeJS along with the Cheerio and Puppeteer modules, for data extraction and browser 
+automation respectively.
+
+The program runs as follows: 
+Step 1: Open a browser Window and redirect to www.Instagram.com
+Step 2: Log in to Instagram using credentials provided in a separate file
+Step 3: Search the profiles using the usernames (also present in aforementioned file).
+Step 4: Use Cheerio to extract desired data.
+Step 5: Search for the next profile.
+Step 6: Repeat steps 3 to 5 until all profiles have been searched and all data has been extracted.
+Step 7: Close the Browser Window.
+Step 8: Display all extracted Data in a Tabular format in the Node window.
