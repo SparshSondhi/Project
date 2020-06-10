@@ -8,7 +8,7 @@ function parseHTML(data, userName) {
     let $ = cheerio.load(data);
     let data1 = $("meta[name='description']").attr("content");
     let info = data1.split(" ");
-    // fixData(info);
+    // fixData(info); can be used to convert data from 1.1k format to 1100, but causes errors when format is 2,134.
     let followers = info[0];
     let following = info[2];
     let noofposts = info[4];
@@ -152,21 +152,17 @@ function loginP() {
             console.log("\nAll Data Scanned");
             tab.close();
         })
-        //Data Scraped
-        //----------------Begin Table Compilation---------------
-
-        //----------------Table Created----------------------
     })()
 }
 loginP();
-function fixData(arr){
-    for(let i=0;i<arr.length;i++){
-        let c = arr[i].charAt(arr[i].length - 1)
-        switch(c){
-            case 'k': arr[i].substr(0,arr[i].length-2); arr[i] = parseFloat(arr[i]); arr[i] *= 1000; break;
-            case 'm': arr[i].substr(0,arr[i].length-2); arr[i] = parseFloat(arr[i]); arr[i] *= 1000000; break;
-            default: arr[i] = parseFloat(arr[i]);
-        }
-    }
-    return arr;
+// function fixData(arr){
+//     for(let i=0;i<arr.length;i++){
+//         let c = arr[i].charAt(arr[i].length - 1)
+//         switch(c){
+//             case 'k': arr[i].substr(0,arr[i].length-2); arr[i] = parseFloat(arr[i]); arr[i] *= 1000; break;
+//             case 'm': arr[i].substr(0,arr[i].length-2); arr[i] = parseFloat(arr[i]); arr[i] *= 1000000; break;
+//             default: arr[i] = parseFloat(arr[i]);
+//         }
+//     }
+//     return arr;
 } 
